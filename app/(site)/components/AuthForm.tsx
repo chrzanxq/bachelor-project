@@ -1,13 +1,16 @@
 'use client';
 
-import {useCallback, useState} from "react";
+import {useCallback, useState, useEffect} from "react";
 import {FieldValues, SubmitHandler, useForm} from "react-hook-form";
 import {BsGithub, BsGoogle} from "react-icons/bs";
+import { toast } from "react-hot-toast";
+import {signIn, useSession} from "next-auth/react";
 
 import Input from "@/app/components/inputs/Input";
 import Button from "@/app/components/Button";
 import AuthSocialButton from "./AuthSocialButton";
 import axios from "axios";
+// import socialAction
 
 type Variant = "LOGIN" | "REGISTER";
 
@@ -42,18 +45,43 @@ const AuthForm = () => {
         // placeholders
         if(variant === 'REGISTER'){
             axios.post('/api/register', data)
+            .catch(() => toast.error('Oooops... something went wrong!'))
+            .finally(() => setIsLoading(false))
         }
 
         if(variant === 'LOGIN'){
-            // NextAuth Sing In
+            signIn('credentials', {
+                ...data,
+                redirect: false
+            })
+            .then((callback) => {
+                if (callback?.error){
+                    toast.error('Invalid credentials')
+                }
+                if(callback?.ok && !callback?.error){
+                    toast.success('Logged in succesfully!')
+                }
+            })
+            .finally(() => setIsLoading(false));
         }
+    }
 
         const socialAction = (action: string) => {
             setIsLoading(true)
+            signIn(action, {redirect:false})
+            .then((callback) => {
+                if(callback?.error){
+                    toast.error('Invalid Credentials');
+                }
 
-            // NextAuth Social Sign In
+                if(callback?.ok && !callback?.error){
+                    toast.success('Logged in succesfully!')
+                    
+                }
+            })
+            .finally(() => setIsLoading(false));
+
         }
-    }
     return (
         <div
          className="
@@ -148,13 +176,13 @@ const AuthForm = () => {
                 </div>
 
                     <div className="mt-6 flex gap-2">
-                        <AuthSocialButton
-                         icon={BsGithub}
-                         onClick={() => socialAction('github')}
+                        <AuthSocialButton 
+                        icon={BsGithub} 
+                        onClick={() => socialAction('github')} 
                         />
-                        <AuthSocialButton
-                         icon={BsGoogle}
-                         onClick={() => socialAction('google')}
+                        <AuthSocialButton 
+                        icon={BsGoogle} 
+                        onClick={() => socialAction('google')} 
                         />
                     </div>
                  </div>
