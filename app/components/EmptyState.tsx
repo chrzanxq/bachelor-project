@@ -18,7 +18,6 @@ const EmptyState = () => {
                 font-semibold
                 text-gray-700
                 animate-bounce
-                shadow-inner
             ">
                 Select a chat or start a new one!
             </h3>
