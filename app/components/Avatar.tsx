@@ -21,6 +21,9 @@ const Avatar: React.FC<AvatarProps> = ({ user }) => {
         rounded-full 
         overflow-hidden
         h-9 
+        ring-2
+        ring-gray
+        drop-shadow-lg
         w-9 
         md:h-11 
         md:w-11
@@ -37,9 +40,9 @@ const Avatar: React.FC<AvatarProps> = ({ user }) => {
             absolute 
             block 
             rounded-full 
-            bg-green-500 
+            bg-green-300 
             ring-2 
-            ring-white 
+            ring-sky-300 
             top-0 
             right-0
             h-2 
