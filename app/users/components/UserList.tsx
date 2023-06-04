@@ -36,6 +36,7 @@ const UserList: React.FC<UserListProps> = ({
                     font-bold
                     text-gray-900
                     py-2
+                    select-none
                 ">
                     People
                 </div>
