@@ -19,6 +19,7 @@ const Avatar: React.FC<AvatarProps> = ({ user }) => {
         relative 
         inline-block 
         rounded-full 
+        ml-1
         overflow-hidden
         h-9 
         ring-2

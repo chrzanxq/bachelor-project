@@ -69,18 +69,21 @@ const ConversationBox: React.FC <ConversationBoxProps> = ({
     onClick={handleClick}
     className={clsx(`
     w-full
+    h-16
     relative
     flex
     items-center
     space-x-3
-    hover:bg-neutral-100
+    hover:bg-white
     rounded-lg
     transition
     my-2
     drop-shadow-md
     cursor-pointer
     `,
-    selected ? 'bg-neutral-100' : 'bg-green-100'
+    selected ? 'bg-neutral-100' : 'bg-green-100',
+    hasSeen ? '' : 'drop-shadow-3xl bg-green-300'
+
     )}> 
       <Avatar user={otherUser}/>
 
@@ -92,12 +95,15 @@ const ConversationBox: React.FC <ConversationBoxProps> = ({
             items-center
             mb-1
           ">
-            <p className="
-              text-md
-              font-medium
-              text-gray-900
-            ">
-              {data.name || otherUser?.name || }
+            <p className={clsx(`
+            text-md
+            font-medium
+            text-gray-900
+            transition
+            `,
+            hasSeen ? '' : 'text-lg font-extrabold'
+            )}>
+              { data.name || otherUser?.name }
             </p>
             {lastMessage?.createdAt && (
               <p className="
@@ -114,7 +120,7 @@ const ConversationBox: React.FC <ConversationBoxProps> = ({
             truncate
             text-sm
           `,
-          hasSeen ? 'text-gray-500' : 'text-black font-medium'
+          hasSeen ? 'text-gray-500' : 'text-black font-medium italic animate-pulse'
           )}
           >
             {lastMessageText}
