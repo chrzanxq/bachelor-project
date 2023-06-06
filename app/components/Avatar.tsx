@@ -26,6 +26,7 @@ const Avatar: React.FC<AvatarProps> = ({ user }) => {
         ring-gray
         drop-shadow-lg
         w-9 
+        bg-gray-100
         md:h-11 
         md:w-11
       ">

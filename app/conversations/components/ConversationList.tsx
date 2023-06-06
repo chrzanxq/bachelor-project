@@ -37,7 +37,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
         isOpen? 'hidden' : 'block w-full left-0'
         )}
     >
-        <div className="px-5">
+        <div className="px-5 bg-green-400 rounded ">
             <div className="flex justify-between mb-4 pt-4">
                 <div className="
                     text-2xl
@@ -45,11 +45,13 @@ const ConversationList: React.FC<ConversationListProps> = ({
                     text-neutral-800
                     select-none
                 ">
-                    Messages
+                    Conversations
                 </div>
+        
                 <div className="
                     rounded-full
                     p-2
+                    mb-2
                     bg-gray-100
                     text-gray-900
                     cursor-pointer
@@ -59,6 +61,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
                 ">
                     <AiOutlineUsergroupAdd size={25}/>
                 </div>
+        </div>
             </div>
             {items.map((item) => (
                 <ConversationBox
@@ -68,7 +71,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
                 
                 />
             ))}
-        </div>
+        
     </aside>
   );
 };
