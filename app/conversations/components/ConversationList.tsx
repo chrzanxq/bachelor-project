@@ -1,5 +1,6 @@
 "use client";
 import { FullConversationType } from "@/app/types";
+import { Conversation } from "@prisma/client";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { AiOutlineUsergroupAdd } from "react-icons/ai"
@@ -36,7 +37,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
         isOpen? 'hidden' : 'block w-full left-0'
         )}
     >
-        <div className="px-5 bg-green-400 rounded ">
+        <div className="px-5 rounded ">
             <div className="flex justify-between mb-4 pt-4">
                 <div className="
                     text-2xl
