@@ -31,7 +31,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
   return (
     <>  
         <GroupChatModal
-            items={users} 
+            users={users} 
             isOpen={isModalOpen}
             onClose={() => setIsModalOpen(false)}
         />

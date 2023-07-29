@@ -16,11 +16,10 @@ import Modal from '@/app/components/Modal';
 import Button from '@/app/components/Button';
 import { toast } from 'react-hot-toast';
 
-
 interface GroupChatModalProps {
   isOpen?: boolean;
   onClose: () => void;
-  items: User[];
+  users: User[];
 }
 
 const GroupChatModal: React.FC<GroupChatModalProps> = ({ 
@@ -78,6 +77,9 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({
               >
                 Create a group chat
               </h2>
+            <p className="mt-1 text-sm leading-6 text-gray-600">
+              Create a chat with more than 2 people.
+            </p>
             <div className="mt-10 flex flex-col gap-y-8">
               <Input
                 disabled={isLoading}
