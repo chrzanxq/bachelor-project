@@ -9,9 +9,10 @@ const useOtherUser = (conversation: FullConversationType | { users: User[] }) =>
   const otherUser = useMemo(() => {
     const currentUserEmail = session.data?.user?.email;
 
-    const otherUser = conversation.users.filter((user) => user.email);
+    const otherUser = conversation.users.filter((user) => currentUserEmail);
+    // console.log('aa', otherUser)
 
-    return otherUser[0];
+    return otherUser[1];
   }, [session.data?.user?.email, conversation.users]);
 
   return otherUser;

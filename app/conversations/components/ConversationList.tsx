@@ -1,6 +1,5 @@
 "use client";
 import { FullConversationType } from "@/app/types";
-import { Conversation } from "@prisma/client";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { AiOutlineUsergroupAdd } from "react-icons/ai"
