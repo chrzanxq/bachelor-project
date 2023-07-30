@@ -28,15 +28,15 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({
         lg:z-40 
         lg:w-20 
         xl:px-6
+        bg-[#ACFADF]
         lg:overflow-y-auto 
         lg:bg-violet-gray-100 
-        lg:border-r-[1px]
         lg:pb-4
         lg:flex
         lg:flex-col
         justify-between
         drop-shadow-lg
-        
+        rounded-xl
       ">
         <nav className="mt-4 flex flex-col justify-between">
           <ul role="list" className="flex flex-col items-center space-y-1">

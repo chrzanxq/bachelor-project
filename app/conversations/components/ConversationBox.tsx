@@ -73,11 +73,14 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
         flex 
         items-center 
         space-x-3 
-        p-3 
+        p-3
+        mb-2 
+        bg-green-100
         hover:bg-neutral-100
         rounded-lg
         transition
         cursor-pointer
+        drop-shadow-xl
         `,
         selected ? 'bg-green-400' : ''
       )}

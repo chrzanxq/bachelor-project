@@ -50,11 +50,13 @@ const Form = () => {
       className="
         py-4 
         px-4 
-        bg-white 
+        bg-neutral-200
+        text-white 
         border-t 
         flex 
         items-center 
         gap-2 
+        rounded-md
         lg:gap-4 
         w-full
       "
@@ -64,7 +66,7 @@ const Form = () => {
         onUpload={handleUpload} 
         uploadPreset="vjoov3u2"
       >
-        <HiPhoto size={30} className="text-green-500" />
+        <HiPhoto size={30} className="text-green-500 " />
       </CldUploadButton>
       <form 
         onSubmit={handleSubmit(onSubmit)} 

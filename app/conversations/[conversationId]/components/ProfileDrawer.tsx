@@ -65,7 +65,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
         onClose={() => setConfirmOpen(false)}
       />
       <Transition.Root show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-50" onClose={onClose}>
+        <Dialog as="div" className="relative z-50 " onClose={onClose}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-500"
@@ -91,7 +91,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                   leaveTo="translate-x-full"
                 >
                   <Dialog.Panel className="pointer-events-auto w-screen max-w-md">
-                    <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
+                    <div className="flex h-full flex-col lg:no-scrollbar overflow-y-scroll bg-white py-6 shadow-xl">
                       <div className="px-4 sm:px-6">
                         <div className="flex items-start justify-end">
                           <div className="ml-3 flex h-7 items-center">
@@ -123,7 +123,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                 <IoTrash size={20} />
                               </div>
                               <div className="text-sm font-light text-neutral-600">
-                                Delete chat with {otherUser?.name}
+                                Delete this chat
                               </div>
                             </div>
                           </div>

@@ -90,11 +90,11 @@ const ConversationList: React.FC<ConversationListProps> = ({
         pb-20
         lg:pb-0
         lg:left-20 
+        bg-[#E8FFCE]
         lg:w-80 
         lg:block
+        rounded-xl
         overflow-y-auto 
-        border-r 
-        border-gray-200 
       `, isOpen ? 'hidden' : 'block w-full left-0')}>
         <div className="px-5">
           <div className="flex justify-between mb-4 pt-4">

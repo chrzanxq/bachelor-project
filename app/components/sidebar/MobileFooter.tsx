@@ -19,10 +19,11 @@ const MobileFooter = () => {
         bottom-0
         z-40
         flex
+        bg-[#ACFADF]
         items-center
-        bg-white
-        border-t-[1px]
         lg:hidden
+        drop-shadow-xl
+        shadow-2xl
     ">
         {routes.map((route) => (
             <MobileItem
