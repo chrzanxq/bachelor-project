@@ -30,12 +30,22 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
   const otherUser = useOtherUser(data);
   
   const joinedDate = useMemo(() => {
-    return format(new Date(otherUser.createdAt), 'PP');
-  }, [otherUser.createdAt]);
+    const date = otherUser.createdAt
+
+    if(!date){
+      console.log('brak danych')
+    }
+    try{
+      format(new Date(date), 'PP')
+    } catch(error: any){
+      return 
+    }
+
+  }, [otherUser?.createdAt]);
   
   const title = useMemo(() => {
-    return data.name || otherUser.name;
-  }, [data.name, otherUser.name]);
+    return data.name || otherUser?.name;
+  }, [data.name, otherUser?.name]);
 
   const { members } = useActiveList();
   const isActive = members.indexOf(otherUser?.email!) !== -1;
@@ -113,7 +123,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                 <IoTrash size={20} />
                               </div>
                               <div className="text-sm font-light text-neutral-600">
-                                Delete chat with {otherUser.name}
+                                Delete chat with {otherUser?.name}
                               </div>
                             </div>
                           </div>
@@ -165,7 +175,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                   sm:col-span-2
                                 "
                               >
-                                {otherUser.email}
+                                {otherUser?.email}
                               </dd>
                             </div>
                           )}
