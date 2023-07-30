@@ -38,7 +38,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
     try{
       format(new Date(date), 'PP')
     } catch(error: any){
-      return 
+      return ''
     }
 
   }, [otherUser?.createdAt]);
