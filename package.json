@@ -1,12 +1,13 @@
 {
-  "name": "bachelor-project",
+  "name": "whatsapp",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
@@ -48,5 +49,5 @@
     "@types/bcrypt": "^5.0.0",
     "@types/lodash": "^4.14.194",
     "prisma": "^4.13.0"
-  } 
+  }
 }

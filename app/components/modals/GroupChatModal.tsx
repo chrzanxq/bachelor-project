@@ -10,10 +10,10 @@ import {
 } from 'react-hook-form';
 import { User } from '@prisma/client';
 
-import Input from '@/app/components/inputs/Input';
-import Select from '@/app/components/inputs/Select';
-import Modal from '@/app/components/Modal';
-import Button from '@/app/components/Button';
+import Input from "../inputs/Input";
+import Select from '../inputs/Select';
+import Modal from './Modal';
+import Button from '../Button';
 import { toast } from 'react-hot-toast';
 
 interface GroupChatModalProps {
