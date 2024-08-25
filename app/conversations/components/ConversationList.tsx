@@ -90,7 +90,6 @@ const ConversationList: React.FC<ConversationListProps> = ({
         pb-20
         lg:pb-0
         lg:left-20 
-        bg-[#E8FFCE]
         lg:w-80 
         lg:block
         rounded-xl

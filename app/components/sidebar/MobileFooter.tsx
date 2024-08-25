@@ -19,7 +19,7 @@ const MobileFooter = () => {
         bottom-0
         z-40
         flex
-        bg-[#ACFADF]
+        bg-gray-100
         items-center
         lg:hidden
         drop-shadow-xl

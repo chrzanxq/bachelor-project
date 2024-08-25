@@ -56,7 +56,7 @@ const AuthForm = () => {
       .then(() => signIn('credentials', {
         ...data,
         redirect: false,
-      }))
+      })).catch((error) => console.log(error))
       .then((callback) => {
         if (callback?.error) {
           toast.error('Invalid credentials!');
@@ -66,7 +66,10 @@ const AuthForm = () => {
           router.push('/conversations')
         }
       })
-      .catch(() => toast.error('Something went wrong!'))
+      .catch((error) => { 
+        // console.log(error)
+         toast.error('Something went wrong!')
+        })
       .finally(() => setIsLoading(false))
     }
 
